@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import React, {useState} from "react";
+import { useTotalTracker } from "../components/totaltracker";
 import {
   SimpleGrid,
   Box,
@@ -26,6 +27,8 @@ export default function Home() {
     "Dachshund",
     "Yorkshire Terrier",
   ];
+
+  const { setTotalPremium } = useTotalTracker();
 
   const [breed, setBreed] = useState("");
   const [age, setAge] = useState("");
@@ -94,6 +97,7 @@ export default function Home() {
         const result = await response.json();
 
         console.log('Calculation result:', result);
+        setTotalPremium(result.totalPremium);
         setQuote(result);
       } catch (error) {
         console.error('Error during API call:', error);
