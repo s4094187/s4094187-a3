@@ -10,11 +10,9 @@ export default function Layout ({children }: LayoutProps) {
   return (
     <div className="layout">
       <Header />
-      <div className="content">
-        <div className="main">
+        <div className="content">
           {children}
         </div>
-      </div>
       <Footer />
     </div>
   )
