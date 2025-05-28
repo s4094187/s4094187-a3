@@ -1,9 +1,10 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import InsuranceForm from "./index";
-import Header from "../components/header";
-import { TotalTrackerProvider } from "../components/totaltracker";
+import InsuranceForm from "../src/pages/index";
+import Header from "../src/components/header";
+import { TotalTrackerProvider } from "../src/components/totaltracker";
+import '@testing-library/jest-dom';
 
 // Mock fetch API globally
 beforeEach(() => {
